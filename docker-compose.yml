@@ -1,0 +1,32 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: dev
+            args:
+                APP_ENV: dev
+        container_name: sf-demo-api
+        volumes:
+            - .:/var/www/html
+        ports:
+            - "80:80"
+        depends_on:
+            - database
+        environment:
+            APP_ENV: dev
+
+    database:
+        image: mysql:8.2
+        container_name: sf_demo-database
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: sf_demo
+            TZ: Europe/Bratislava
+        ports:
+            - "3306:3306"
+        volumes:
+            - sf_demo-database:/var/lib/mysql
+
+volumes:
+    sf_demo-database:
