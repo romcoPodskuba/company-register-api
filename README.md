@@ -25,3 +25,9 @@ See the `Makefile` for additional commands.
 | Service                        | URL                      |
 | ------------------------------ | ------------------------ |
 | API documentation (Swagger UI) | http://localhost/api/doc |
+
+## Tasks
+
+| Task         | Branch         | Pull Request                                        |
+| ------------ | -------------- | --------------------------------------------------- |
+| 1. Algorithm | algorithm-task | https://github.com/romcoPodskuba/sf-demo-api/pull/1 |
