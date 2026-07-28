@@ -12,4 +12,11 @@ class DuplicatesRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Duplicates::class);
     }
+
+    public function findAllDuplicatesValues(): array
+    {
+        // todo sql query
+
+        return [];
+    }
 }
