@@ -4,5 +4,5 @@ namespace App\Exception;
 
 use Symfony\Component\HttpKernel\Attribute\WithHttpStatus;
 
-#[WithHttpStatus(404)]
+#[WithHttpStatus(500)]
 class DatabaseNotInitializedException extends \RuntimeException {}
