@@ -42,6 +42,20 @@ class DuplicatesController extends AbstractController
                         ]
                     )
                 )
+            ),
+            new OA\Response(
+                response: 404,
+                description: 'Database is not initialized or duplicates table is empty (fixtures not loaded).',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(property: 'status', type: 'integer', example: 404),
+                        new OA\Property(
+                            property: 'detail',
+                            type: 'string',
+                            example: 'Database is not initialized. Please run make db-init or check the database.'
+                        ),
+                    ]
+                )
             )
         ]
     )]

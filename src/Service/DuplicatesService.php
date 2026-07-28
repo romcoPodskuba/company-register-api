@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Exception\DatabaseNotInitializedException;
 use App\Repository\DuplicatesRepository;
 
 class DuplicatesService
@@ -12,7 +13,11 @@ class DuplicatesService
 
     public function list(): array
     {
-        // todo check if the duplicates are already in the database
+        if (!$this->duplicatesRepository->hasRows()) {
+            throw new DatabaseNotInitializedException(
+                'Database table duplicates is empty. Please run make db-init or check the database.'
+            );
+        }
 
         return $this->duplicatesRepository->findAllDuplicatesValues();
     }
