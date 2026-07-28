@@ -14,11 +14,12 @@ class DuplicatesService
     public function list(): array
     {
         if (!$this->duplicatesRepository->hasRows()) {
+            // I would not use this exception in a real app, because an empty result is a valid output.
             throw new DatabaseNotInitializedException(
                 'Database table duplicates is empty. Please run make db-init or check the database.'
             );
         }
 
-        return $this->duplicatesRepository->findAllDuplicatesValues();
+        return $this->duplicatesRepository->findAllDuplicatesValueRows();
     }
 }

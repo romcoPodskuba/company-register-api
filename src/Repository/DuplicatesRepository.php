@@ -26,10 +26,18 @@ class DuplicatesRepository extends ServiceEntityRepository
         }
     }
 
-    public function findAllDuplicatesValues(): array
+    public function findAllDuplicatesValueRows(): array
     {
-        // todo sql query
+        $q = "SELECT id, value
+              FROM duplicates
+              WHERE value IN (
+                  SELECT value
+                  FROM duplicates
+                  GROUP BY value
+                  HAVING COUNT(*) > 1
+              )";
+        $stmt = $this->getEntityManager()->getConnection()->executeQuery($q);
 
-        return [];
+        return $stmt->fetchAllAssociative();
     }
 }
