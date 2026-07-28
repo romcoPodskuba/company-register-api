@@ -31,3 +31,5 @@ See the `Makefile` for additional commands.
 | Task         | Branch         | Pull Request                                        |
 | ------------ | -------------- | --------------------------------------------------- |
 | 1. Algorithm | algorithm-task | https://github.com/romcoPodskuba/sf-demo-api/pull/1 |
+| 2. Database  | database-task  | https://github.com/romcoPodskuba/sf-demo-api/pull/2 |
+| 3. PHP       | php-task       | https://github.com/romcoPodskuba/sf-demo-api/pull/3 |
