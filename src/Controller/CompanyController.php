@@ -15,7 +15,6 @@ class CompanyController extends AbstractController
         private readonly CompanyService $companyService
     ) {}
 
-
     #[OA\Get(
         summary: 'Get company data from register',
         tags: ['Company'],
@@ -28,7 +27,7 @@ class CompanyController extends AbstractController
                     required: ['businessId', 'taxId', 'name', 'address', 'dateCreated'],
                     properties: [
                         new OA\Property(property: 'businessId', type: 'string', example: '12345678'),
-                        new OA\Property(property: 'taxId', type: 'string', example: 'CZ12345678'),
+                        new OA\Property(property: 'taxId', type: 'string', nullable: true, example: 'CZ12345678'),
                         new OA\Property(property: 'name', type: 'string', example: 'Company Name'),
                         new OA\Property(
                             property: 'address',
