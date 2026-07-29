@@ -6,7 +6,7 @@ use App\DTO\CompanyRegister\Company;
 
 class CompanyService
 {
-    public function getFromRegister(string $businessId): void/*Company*/
+    public function getFromRegister(string $businessId): Company
     {
         //todo
     }

@@ -64,6 +64,42 @@ class CompanyController extends AbstractController
                 )
             ),
             new OA\Response(
+                response: JsonResponse::HTTP_UNAUTHORIZED,
+                description: 'Unauthorized access.',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(
+                            property: 'status',
+                            type: 'integer',
+                            example: JsonResponse::HTTP_UNAUTHORIZED,
+                        ),
+                        new OA\Property(
+                            property: 'detail',
+                            type: 'string',
+                            example: 'Unauthorized access.',
+                        ),
+                    ]
+                )
+            ),
+            new OA\Response(
+                response: JsonResponse::HTTP_FORBIDDEN,
+                description: 'Access denied.',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(
+                            property: 'status',
+                            type: 'integer',
+                            example: JsonResponse::HTTP_FORBIDDEN,
+                        ),
+                        new OA\Property(
+                            property: 'detail',
+                            type: 'string',
+                            example: 'Access denied.',
+                        ),
+                    ]
+                )
+            ),
+            new OA\Response(
                 response: JsonResponse::HTTP_NOT_FOUND,
                 description: 'Company not found.',
                 content: new OA\JsonContent(
@@ -77,6 +113,24 @@ class CompanyController extends AbstractController
                             property: 'detail',
                             type: 'string',
                             example: 'Company not found.',
+                        ),
+                    ]
+                )
+            ),
+            new OA\Response(
+                response: JsonResponse::HTTP_INTERNAL_SERVER_ERROR,
+                description: 'Something went wrong.',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(
+                            property: 'status',
+                            type: 'integer',
+                            example: JsonResponse::HTTP_INTERNAL_SERVER_ERROR,
+                        ),
+                        new OA\Property(
+                            property: 'detail',
+                            type: 'string',
+                            example: 'Something went wrong.',
                         ),
                     ]
                 )
@@ -110,6 +164,6 @@ class CompanyController extends AbstractController
     #[Route('/{businessId}/register-data', name: 'register_data', methods: ['GET'])]
     public function registerData(string $businessId): JsonResponse
     {
-        return $this->json([]/*$this->companyService->getFromRegister($businessId)*/);
+        return $this->json($this->companyService->getFromRegister($businessId));
     }
 }
