@@ -41,7 +41,12 @@ class CompanyController extends AbstractController
                                 new OA\Property(property: 'country', type: 'string', example: 'Country'),
                             ]
                         ),
-                        new OA\Property(property: 'dateCreated', type: 'date', example: '2026-07-29')
+                        new OA\Property(
+                            property: 'dateCreated',
+                            type: 'string',
+                            format: 'date',
+                            example: '2026-07-29'
+                        )
                     ]
                 )
             ),
@@ -118,19 +123,19 @@ class CompanyController extends AbstractController
                 )
             ),
             new OA\Response(
-                response: JsonResponse::HTTP_INTERNAL_SERVER_ERROR,
-                description: 'Something went wrong.',
+                response: JsonResponse::HTTP_BAD_GATEWAY,
+                description: 'Failed to parse register response.',
                 content: new OA\JsonContent(
                     properties: [
                         new OA\Property(
                             property: 'status',
                             type: 'integer',
-                            example: JsonResponse::HTTP_INTERNAL_SERVER_ERROR,
+                            example: JsonResponse::HTTP_BAD_GATEWAY,
                         ),
                         new OA\Property(
                             property: 'detail',
                             type: 'string',
-                            example: 'Something went wrong.',
+                            example: 'Failed to parse register response.',
                         ),
                     ]
                 )

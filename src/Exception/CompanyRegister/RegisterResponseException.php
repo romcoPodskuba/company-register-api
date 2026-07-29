@@ -5,5 +5,5 @@ namespace App\Exception\CompanyRegister;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\WithHttpStatus;
 
-#[WithHttpStatus(Response::HTTP_INTERNAL_SERVER_ERROR)]
-class UnexpectedException extends \RuntimeException {}
+#[WithHttpStatus(Response::HTTP_BAD_GATEWAY)]
+class RegisterResponseException extends \RuntimeException {}
