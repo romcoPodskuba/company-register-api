@@ -1,0 +1,216 @@
+{
+    "ico": "01569651",
+    "obchodniJmeno": "Superfaktura.cz, s.r.o.",
+    "sidlo": {
+        "kodStatu": "CZ",
+        "nazevStatu": "Česká republika",
+        "kodKraje": 116,
+        "nazevKraje": "Jihomoravský kraj",
+        "kodOkresu": 3702,
+        "nazevOkresu": "Brno-město",
+        "kodObce": 582786,
+        "nazevObce": "Brno",
+        "kodMestskeCastiObvodu": 551058,
+        "kodUlice": 32603,
+        "nazevMestskeCastiObvodu": "Brno-Židenice",
+        "nazevUlice": "Šámalova",
+        "cisloDomovni": 2904,
+        "kodCastiObce": 490415,
+        "cisloOrientacni": 21,
+        "nazevCastiObce": "Židenice",
+        "kodAdresnihoMista": 19648731,
+        "psc": 61500,
+        "textovaAdresa": "Šámalova 2904/21, Židenice, 61500 Brno",
+        "standardizaceAdresy": true,
+        "typCisloDomovni": 1
+    },
+    "pravniForma": "112",
+    "pravniFormaRos": "112",
+    "financniUrad": "289",
+    "datumVzniku": "2013-04-08",
+    "datumAktualizace": "2025-07-09",
+    "dic": "CZ01569651",
+    "icoId": "01569651",
+    "adresaDorucovaci": {
+        "radekAdresy1": "Šámalova 2904/21",
+        "radekAdresy2": "Židenice",
+        "radekAdresy3": "61500 Brno"
+    },
+    "czNace2008": ["00", "10", "461", "G"],
+    "seznamRegistraci": {
+        "stavZdrojeRos": "AKTIVNI",
+        "stavZdrojeVr": "AKTIVNI",
+        "stavZdrojeRes": "AKTIVNI",
+        "stavZdrojeRzp": "AKTIVNI",
+        "stavZdrojeNrpzs": "NEEXISTUJICI",
+        "stavZdrojeRpsh": "NEEXISTUJICI",
+        "stavZdrojeRcns": "NEEXISTUJICI",
+        "stavZdrojeSzr": "NEEXISTUJICI",
+        "stavZdrojeDph": "AKTIVNI",
+        "stavZdrojeSkDph": "NEEXISTUJICI",
+        "stavZdrojeSd": "NEEXISTUJICI",
+        "stavZdrojeIr": "NEEXISTUJICI",
+        "stavZdrojeCeu": "NEEXISTUJICI",
+        "stavZdrojeRs": "NEEXISTUJICI",
+        "stavZdrojeRed": "NEEXISTUJICI",
+        "stavZdrojeMonitor": "NEEXISTUJICI"
+    },
+    "primarniZdroj": "ros",
+    "dalsiUdaje": [
+        {
+            "obchodniJmeno": [
+                {
+                    "obchodniJmeno": "Superfaktura.cz, s.r.o.",
+                    "primarniZaznam": true
+                }
+            ],
+            "sidlo": [
+                {
+                    "sidlo": {
+                        "kodStatu": "CZ",
+                        "nazevStatu": "Česká republika",
+                        "kodKraje": 116,
+                        "nazevKraje": "Jihomoravský kraj",
+                        "kodOkresu": 3702,
+                        "nazevOkresu": "Brno-město",
+                        "kodObce": 582786,
+                        "nazevObce": "Brno",
+                        "kodMestskeCastiObvodu": 551058,
+                        "kodUlice": 32603,
+                        "nazevMestskeCastiObvodu": "Brno-Židenice",
+                        "nazevUlice": "Šámalova",
+                        "cisloDomovni": 2904,
+                        "kodCastiObce": 490415,
+                        "cisloOrientacni": 21,
+                        "nazevCastiObce": "Židenice",
+                        "kodAdresnihoMista": 19648731,
+                        "psc": 61500,
+                        "textovaAdresa": "Šámalova 2904/21, Židenice, 61500 Brno",
+                        "standardizaceAdresy": true,
+                        "typCisloDomovni": 1
+                    },
+                    "primarniZaznam": true
+                }
+            ],
+            "pravniForma": "112",
+            "pravniFormaRos": "112",
+            "datovyZdroj": "res"
+        },
+        {
+            "obchodniJmeno": [
+                {
+                    "obchodniJmeno": "Superfaktura.cz, s.r.o.",
+                    "primarniZaznam": true
+                }
+            ],
+            "sidlo": [
+                {
+                    "sidlo": {
+                        "kodStatu": "CZ",
+                        "nazevStatu": "Česká republika",
+                        "kodKraje": 116,
+                        "nazevKraje": "Jihomoravský kraj",
+                        "kodOkresu": 3702,
+                        "nazevOkresu": "Brno-město",
+                        "kodObce": 582786,
+                        "nazevObce": "Brno",
+                        "kodMestskeCastiObvodu": 551058,
+                        "kodUlice": 32603,
+                        "nazevMestskeCastiObvodu": "Brno-Židenice",
+                        "nazevUlice": "Šámalova",
+                        "cisloDomovni": 2904,
+                        "kodCastiObce": 490415,
+                        "cisloOrientacni": 21,
+                        "nazevCastiObce": "Židenice",
+                        "kodAdresnihoMista": 19648731,
+                        "psc": 61500,
+                        "textovaAdresa": "Šámalova 2904/21, Židenice, 61500 Brno",
+                        "standardizaceAdresy": true,
+                        "typCisloDomovni": 1
+                    },
+                    "primarniZaznam": true
+                }
+            ],
+            "pravniFormaRos": "112",
+            "datovyZdroj": "ros"
+        },
+        {
+            "obchodniJmeno": [
+                {
+                    "obchodniJmeno": "Superfaktura.cz, s.r.o.",
+                    "primarniZaznam": true
+                }
+            ],
+            "sidlo": [
+                {
+                    "sidlo": {
+                        "kodStatu": "CZ",
+                        "nazevStatu": "Česká republika",
+                        "kodKraje": 116,
+                        "nazevKraje": "Jihomoravský kraj",
+                        "kodOkresu": 3702,
+                        "nazevOkresu": "Brno-město",
+                        "kodObce": 582786,
+                        "nazevObce": "Brno",
+                        "kodMestskeCastiObvodu": 551058,
+                        "kodUlice": 32603,
+                        "nazevMestskeCastiObvodu": "Brno-Židenice",
+                        "nazevUlice": "Šámalova",
+                        "cisloDomovni": 2904,
+                        "kodCastiObce": 490415,
+                        "cisloOrientacni": 21,
+                        "nazevCastiObce": "Židenice",
+                        "kodAdresnihoMista": 19648731,
+                        "psc": 61500,
+                        "textovaAdresa": "Šámalova 2904/21, Židenice, 61500 Brno",
+                        "standardizaceAdresy": true,
+                        "typCisloDomovni": 1
+                    },
+                    "primarniZaznam": true
+                }
+            ],
+            "pravniForma": "112",
+            "datovyZdroj": "rzp"
+        },
+        {
+            "obchodniJmeno": [
+                {
+                    "obchodniJmeno": "Superfaktura.cz, s.r.o.",
+                    "primarniZaznam": true
+                }
+            ],
+            "sidlo": [
+                {
+                    "sidlo": {
+                        "kodStatu": "CZ",
+                        "nazevStatu": "Česká republika",
+                        "kodKraje": 116,
+                        "nazevKraje": "Jihomoravský kraj",
+                        "kodOkresu": 3702,
+                        "nazevOkresu": "Brno-město",
+                        "kodObce": 582786,
+                        "nazevObce": "Brno",
+                        "kodMestskeCastiObvodu": 551058,
+                        "kodUlice": 32603,
+                        "nazevMestskeCastiObvodu": "Brno-Židenice",
+                        "nazevUlice": "Šámalova",
+                        "cisloDomovni": 2904,
+                        "kodCastiObce": 490415,
+                        "cisloOrientacni": 21,
+                        "nazevCastiObce": "Židenice",
+                        "kodAdresnihoMista": 19648731,
+                        "psc": 61500,
+                        "textovaAdresa": "Šámalova 2904/21, Židenice, 61500 Brno",
+                        "standardizaceAdresy": true,
+                        "typCisloDomovni": 1
+                    },
+                    "primarniZaznam": true
+                }
+            ],
+            "pravniForma": "112",
+            "spisovaZnacka": "C 78654/KSBR",
+            "datovyZdroj": "vr"
+        }
+    ],
+    "czNace": ["461", "00", "10", "G"]
+}
