@@ -15,7 +15,7 @@ class CompanyRegisterProvider implements CompanyRegisterProviderInterface
 
     public function getCompany(string $businessId): Company
     {
-        $this->businessIdValidator->validate($businessId);
+        $businessId = $this->businessIdValidator->validate($businessId);
 
         $companyFromRegister = $this->apiClient->getCompany($businessId);
 

@@ -4,5 +4,5 @@ namespace App\Provider\CompanyRegister;
 
 interface BusinessIdValidatorInterface
 {
-    public function validate(string $businessId): void;
+    public function validate(string $businessId): string;
 }
