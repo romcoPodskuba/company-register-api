@@ -33,3 +33,11 @@ See the `Makefile` for additional commands.
 | 1. Algorithm | algorithm-task | https://github.com/romcoPodskuba/sf-demo-api/pull/1 |
 | 2. Database  | database-task  | https://github.com/romcoPodskuba/sf-demo-api/pull/2 |
 | 3. PHP       | php-task       | https://github.com/romcoPodskuba/sf-demo-api/pull/3 |
+
+## Unit tests
+
+Unit tests use mocked HTTP client.
+
+```bash
+make test
+```
