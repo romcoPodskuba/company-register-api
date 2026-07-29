@@ -29,6 +29,10 @@ rebuild:
 shell:
 	docker exec -it sf-demo-api bash
 
+# Run PHPUnit tests
+test:
+	docker exec -it sf-demo-api vendor/bin/simple-phpunit
+
 # Clear Symfony cache
 cache-clear:
 	docker exec -it sf-demo-api bin/console cache:clear
