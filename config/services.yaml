@@ -24,3 +24,6 @@ services:
 
     App\Provider\CompanyRegister\CompanyRegisterProviderInterface:
         alias: App\Provider\CompanyRegister\Ares\CompanyRegisterProvider
+
+    App\Provider\CompanyRegister\BusinessIdValidatorInterface:
+        alias: App\Provider\CompanyRegister\Ares\CzechBusinessIdValidator
