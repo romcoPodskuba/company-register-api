@@ -28,12 +28,6 @@ class DuplicatesRepository extends ServiceEntityRepository
 
     public function findAllDuplicatesValueRows(): array
     {
-        // Odpoveď k otázkam na zamyslenie zo zadania:
-        // Pri tabuľke s väčším počtom riadkov by som pridal index na stĺpec value,
-        // pretože podľa neho sa zgrupuje aj filtruje. Vo väčšine prípadov by mal index
-        // stačiť. Ďalšiu optimalizáciu by som zvažoval až v prípade, že by to ukázalo
-        // EXPLAIN alebo ďalšia analýza problému.
-
         $q = "SELECT id, value
               FROM duplicates
               WHERE value IN (
