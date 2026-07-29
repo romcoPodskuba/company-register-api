@@ -78,6 +78,7 @@
         "doctrine/doctrine-fixtures-bundle": "^4.3",
         "nelmio/api-doc-bundle": "^5.10",
         "symfony/maker-bundle": "^1.67",
+        "symfony/phpunit-bridge": "^8.1",
         "symfony/stopwatch": "8.1.*",
         "symfony/web-profiler-bundle": "8.1.*"
     }
