@@ -27,7 +27,12 @@ class CompanyController extends AbstractController
                     required: ['businessId', 'taxId', 'name', 'address', 'dateCreated'],
                     properties: [
                         new OA\Property(property: 'businessId', type: 'string', example: '12345678'),
-                        new OA\Property(property: 'taxId', type: 'string', nullable: true, example: 'CZ12345678'),
+                        new OA\Property(
+                            property: 'taxId',
+                            type: 'string',
+                            nullable: true,
+                            example: 'CZ12345678'
+                        ),
                         new OA\Property(property: 'name', type: 'string', example: 'Company Name'),
                         new OA\Property(
                             property: 'address',
@@ -35,7 +40,12 @@ class CompanyController extends AbstractController
                             required: ['houseNumber', 'street', 'city', 'postalCode', 'country'],
                             properties: [
                                 new OA\Property(property: 'houseNumber', type: 'string', example: '1'),
-                                new OA\Property(property: 'street', type: 'string', example: 'Street'),
+                                new OA\Property(
+                                    property: 'street',
+                                    type: 'string',
+                                    nullable: true,
+                                    example: 'Street'
+                                ),
                                 new OA\Property(property: 'city', type: 'string', example: 'City'),
                                 new OA\Property(property: 'postalCode', type: 'string', example: '12345'),
                                 new OA\Property(property: 'country', type: 'string', example: 'Country'),

@@ -13,6 +13,8 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ApiClient
 {
+    // Docs available at: https://ares.gov.cz/swagger-ui/#/ekonomicke-subjekty/vratEkonomickySubjekt
+
     private const BASE_URL = 'https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty';
 
     public function __construct(

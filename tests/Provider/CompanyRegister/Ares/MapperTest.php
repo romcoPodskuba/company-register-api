@@ -42,6 +42,16 @@ class MapperTest extends TestCase
         $this->assertNull($company->taxId);
     }
 
+    public function testMapHandlesMissingStreet(): void
+    {
+        $companyFixtureData = $this->loadFixture('ares_company_response.json');
+        unset($companyFixtureData['sidlo']['nazevUlice']);
+
+        $company = $this->mapper->map($companyFixtureData);
+
+        $this->assertNull($company->address->street);
+    }
+
     public function testMapThrowsRegisterResponseExceptionWhenDataIsIncomplete(): void
     {
         $this->expectException(RegisterResponseException::class);

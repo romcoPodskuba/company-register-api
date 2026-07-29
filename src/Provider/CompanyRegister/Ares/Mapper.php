@@ -17,7 +17,7 @@ class Mapper
                 name: $data['obchodniJmeno'],
                 address: new Address(
                     houseNumber: (string) $data['sidlo']['cisloDomovni'],
-                    street: $data['sidlo']['nazevUlice'],
+                    street: $data['sidlo']['nazevUlice'] ?? null,
                     city: $data['sidlo']['nazevObce'],
                     postalCode: (string) $data['sidlo']['psc'],
                     country: $data['sidlo']['nazevStatu'],
