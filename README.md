@@ -1,5 +1,15 @@
 # sf-demo-api
 
+Symfony API for fetching company data from the Czech business register (ARES).
+
+## About
+
+Loads company data from [ARES](https://ares.gov.cz) by Czech business ID (IČO) and returns it as structured, immutable DTOs ready for further use.
+
+The implementation validates the business ID (format and checksum) before calling the external API, maps the ARES response to domain objects, and handles error states explicitly — invalid input, not found, rate limiting, and register unavailability.
+
+Data source: `GET https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/{ICO}`
+
 ## Requirements
 
 - Docker & Docker Compose
@@ -26,13 +36,12 @@ See the `Makefile` for additional commands.
 | ------------------------------ | ------------------------ |
 | API documentation (Swagger UI) | http://localhost/api/doc |
 
-## Tasks
+## Architecture decisions
 
-| Task         | Branch         | Pull Request                                        |
-| ------------ | -------------- | --------------------------------------------------- |
-| 1. Algorithm | algorithm-task | https://github.com/romcoPodskuba/sf-demo-api/pull/1 |
-| 2. Database  | database-task  | https://github.com/romcoPodskuba/sf-demo-api/pull/2 |
-| 3. PHP       | php-task       | https://github.com/romcoPodskuba/sf-demo-api/pull/3 |
+- **Provider pattern with interfaces** — `CompanyRegisterProviderInterface` and `BusinessIdValidatorInterface` decouple the application from ARES. Swapping the data source means implementing new providers, not changing controllers or services.
+- **Immutable DTOs** — ARES responses are mapped to `Company` and `Address` value objects. The API returns a stable, domain-specific shape instead of exposing the raw register payload.
+- **Validation before the HTTP call** — Business ID format and checksum are verified locally first. Invalid input fails fast without hitting the external API.
+- **Layered responsibilities** — `ApiClient` handles HTTP and status codes, `Mapper` transforms the response, `CompanyRegisterProvider` orchestrates the flow. Each class has a single reason to change.
 
 ## Unit tests
 
