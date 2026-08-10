@@ -23,7 +23,6 @@ logs:
 rebuild:
 	$(DOCKER_COMPOSE) down --volumes --remove-orphans
 	$(DOCKER_COMPOSE) up --build -d
-	$(MAKE) db-init
 
 # Enter the Symfony container shell
 shell:
@@ -36,8 +35,3 @@ test:
 # Clear Symfony cache
 cache-clear:
 	docker exec -it company-register-api bin/console cache:clear
-
-# Load database fixtures
-db-init:
-	docker exec -it company-register-api /usr/local/bin/wait-for-it.sh database:3306 --timeout=30 --strict -- bin/console doctrine:migrations:migrate --no-interaction
-	docker exec -it company-register-api bin/console doctrine:fixtures:load --no-interaction

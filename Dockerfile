@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
     git \
-    && docker-php-ext-install pdo pdo_mysql intl zip
+    && docker-php-ext-install intl zip
 
 # Enable Apache mod_rewrite (required for Symfony routing)
 RUN a2enmod rewrite
@@ -44,14 +44,11 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 # Expose port 80
 EXPOSE 80
 
-# Add wait-for-it.sh and entrypoint script
-COPY wait-for-it.sh /usr/local/bin/wait-for-it.sh
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/wait-for-it.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 COPY docker/php.ini /usr/local/etc/php/conf.d/custom.ini
 
-# Use entrypoint to wait for DB
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Start Apache

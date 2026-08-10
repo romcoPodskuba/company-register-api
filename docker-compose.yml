@@ -11,22 +11,5 @@ services:
             - .:/var/www/html
         ports:
             - "80:80"
-        depends_on:
-            - database
         environment:
             APP_ENV: dev
-
-    database:
-        image: mysql:8.2
-        container_name: company-register-database
-        environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: company_register
-            TZ: Europe/Bratislava
-        ports:
-            - "3306:3306"
-        volumes:
-            - company-register-database:/var/lib/mysql
-
-volumes:
-    company-register-database:
