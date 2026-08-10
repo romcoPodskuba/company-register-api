@@ -6,7 +6,7 @@ services:
             target: dev
             args:
                 APP_ENV: dev
-        container_name: sf-demo-api
+        container_name: company-register-api
         volumes:
             - .:/var/www/html
         ports:
@@ -18,15 +18,15 @@ services:
 
     database:
         image: mysql:8.2
-        container_name: sf_demo-database
+        container_name: company-register-database
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: sf_demo
+            MYSQL_DATABASE: company_register
             TZ: Europe/Bratislava
         ports:
             - "3306:3306"
         volumes:
-            - sf_demo-database:/var/lib/mysql
+            - company-register-database:/var/lib/mysql
 
 volumes:
-    sf_demo-database:
+    company-register-database:

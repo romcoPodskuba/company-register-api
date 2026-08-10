@@ -27,17 +27,17 @@ rebuild:
 
 # Enter the Symfony container shell
 shell:
-	docker exec -it sf-demo-api bash
+	docker exec -it company-register-api bash
 
 # Run PHPUnit tests
 test:
-	docker exec -it sf-demo-api vendor/bin/simple-phpunit
+	docker exec -it company-register-api vendor/bin/simple-phpunit
 
 # Clear Symfony cache
 cache-clear:
-	docker exec -it sf-demo-api bin/console cache:clear
+	docker exec -it company-register-api bin/console cache:clear
 
 # Load database fixtures
 db-init:
-	docker exec -it sf-demo-api /usr/local/bin/wait-for-it.sh database:3306 --timeout=30 --strict -- bin/console doctrine:migrations:migrate --no-interaction
-	docker exec -it sf-demo-api bin/console doctrine:fixtures:load --no-interaction
+	docker exec -it company-register-api /usr/local/bin/wait-for-it.sh database:3306 --timeout=30 --strict -- bin/console doctrine:migrations:migrate --no-interaction
+	docker exec -it company-register-api bin/console doctrine:fixtures:load --no-interaction

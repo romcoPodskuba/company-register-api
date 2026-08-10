@@ -1,4 +1,4 @@
-# sf-demo-api
+# company-register-api
 
 Symfony API for fetching company data from the Czech business register (ARES).
 
