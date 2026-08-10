@@ -133,6 +133,24 @@ class CompanyController extends AbstractController
                 )
             ),
             new OA\Response(
+                response: JsonResponse::HTTP_TOO_MANY_REQUESTS,
+                description: 'Rate limit exceeded.',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(
+                            property: 'status',
+                            type: 'integer',
+                            example: JsonResponse::HTTP_TOO_MANY_REQUESTS,
+                        ),
+                        new OA\Property(
+                            property: 'detail',
+                            type: 'string',
+                            example: 'Rate limit exceeded.',
+                        ),
+                    ]
+                )
+            ),
+            new OA\Response(
                 response: JsonResponse::HTTP_BAD_GATEWAY,
                 description: 'Failed to parse register response.',
                 content: new OA\JsonContent(
