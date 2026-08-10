@@ -6,6 +6,7 @@ final class Address
 {
     public function __construct(
         public readonly string $houseNumber,
+        public readonly ?string $orientationNumber,
         public readonly ?string $street,
         public readonly string $city,
         public readonly string $postalCode,

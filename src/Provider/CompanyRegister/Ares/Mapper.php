@@ -18,6 +18,7 @@ class Mapper
             name: $this->requireString($data, 'obchodniJmeno'),
             address: new Address(
                 houseNumber: $this->requireScalarAsString($addressData, 'cisloDomovni'),
+                orientationNumber: $this->optionalScalarAsString($addressData, 'cisloOrientacni'),
                 street: $this->optionalString($addressData, 'nazevUlice'),
                 city: $this->requireString($addressData, 'nazevObce'),
                 postalCode: $this->requireScalarAsString($addressData, 'psc'),
@@ -62,6 +63,19 @@ class Mapper
     {
         if (!array_key_exists($key, $data)) {
             throw new RegisterResponseException(sprintf('Missing or invalid field: %s', $key));
+        }
+
+        if (!is_string($data[$key]) && !is_int($data[$key])) {
+            throw new RegisterResponseException(sprintf('Invalid field type: %s', $key));
+        }
+
+        return (string) $data[$key];
+    }
+
+    private function optionalScalarAsString(array $data, string $key): ?string
+    {
+        if (!array_key_exists($key, $data)) {
+            return null;
         }
 
         if (!is_string($data[$key]) && !is_int($data[$key])) {

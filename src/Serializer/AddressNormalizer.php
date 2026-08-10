@@ -23,6 +23,7 @@ class AddressNormalizer implements NormalizerInterface
 
         return [
             'houseNumber' => $object->houseNumber,
+            'orientationNumber' => $object->orientationNumber,
             'street' => $object->street,
             'city' => $object->city,
             'postalCode' => $object->postalCode,

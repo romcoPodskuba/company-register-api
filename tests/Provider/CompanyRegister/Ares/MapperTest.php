@@ -25,6 +25,7 @@ class MapperTest extends TestCase
         $this->assertSame('CZ01569651', $company->taxId);
         $this->assertSame('Superfaktura.cz, s.r.o.', $company->name);
         $this->assertSame('2904', $company->address->houseNumber);
+        $this->assertSame('21', $company->address->orientationNumber);
         $this->assertSame('Šámalova', $company->address->street);
         $this->assertSame('Brno', $company->address->city);
         $this->assertSame('61500', $company->address->postalCode);

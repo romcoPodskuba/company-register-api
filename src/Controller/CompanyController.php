@@ -37,9 +37,22 @@ class CompanyController extends AbstractController
                         new OA\Property(
                             property: 'address',
                             type: 'object',
-                            required: ['houseNumber', 'street', 'city', 'postalCode', 'country'],
+                            required: [
+                                'houseNumber',
+                                'orientationNumber',
+                                'street',
+                                'city',
+                                'postalCode',
+                                'country'
+                            ],
                             properties: [
                                 new OA\Property(property: 'houseNumber', type: 'string', example: '1'),
+                                new OA\Property(
+                                    property: 'orientationNumber',
+                                    type: 'string',
+                                    nullable: true,
+                                    example: '1'
+                                ),
                                 new OA\Property(
                                     property: 'street',
                                     type: 'string',
