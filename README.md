@@ -40,7 +40,7 @@ See the `Makefile` for additional commands.
 
 - **Provider pattern with interfaces** — `CompanyRegisterProviderInterface` and `BusinessIdValidatorInterface` decouple the application from ARES. Swapping the data source means implementing new providers, not changing controllers or services.
 - **Immutable DTOs** — ARES responses are mapped to `Company` and `Address` value objects. The API returns a stable, domain-specific shape instead of exposing the raw register payload.
-- **Validation before the HTTP call** — Business ID format and checksum are verified locally first. Invalid input fails fast without hitting the external API.
+- **Validation before the HTTP call** — Business ID format and checksum are verified locally first. Invalid input fails fast without hitting the external API. Leading zeros are not padded: the client must send all 8 digits, so incomplete input is rejected instead of silently resolving to a different company.
 - **Layered responsibilities** — `ApiClient` handles HTTP and status codes, `Mapper` transforms the response, `CompanyRegisterProvider` orchestrates the flow. Each class has a single reason to change.
 
 ## Unit tests
