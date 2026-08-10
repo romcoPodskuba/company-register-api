@@ -52,12 +52,15 @@ class MapperTest extends TestCase
         $this->assertNull($company->address->street);
     }
 
-    public function testMapThrowsRegisterResponseExceptionWhenDataIsIncomplete(): void
+    public function testMapThrowsWhenCompanyNameIsMissing(): void
     {
-        $this->expectException(RegisterResponseException::class);
-        $this->expectExceptionMessage('Failed to parse register response.');
+        $companyFixtureData = $this->loadFixture('ares_company_response.json');
+        unset($companyFixtureData['obchodniJmeno']);
 
-        $this->mapper->map(['ico' => '01569651']);
+        $this->expectException(RegisterResponseException::class);
+        $this->expectExceptionMessage('Missing or invalid field: obchodniJmeno');
+
+        $this->mapper->map($companyFixtureData);
     }
 
     private function loadFixture(string $filename): array
