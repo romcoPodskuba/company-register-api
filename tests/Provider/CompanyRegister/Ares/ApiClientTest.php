@@ -3,6 +3,7 @@
 namespace App\Tests\Provider\CompanyRegister\Ares;
 
 use App\Exception\CompanyRegister\CompanyNotFoundException;
+use App\Exception\CompanyRegister\RateLimitExceededException;
 use App\Exception\CompanyRegister\RegisterResponseException;
 use App\Exception\CompanyRegister\RegisterUnavailableException;
 use App\Provider\CompanyRegister\Ares\ApiClient;
@@ -40,17 +41,23 @@ class ApiClientTest extends TestCase
         $apiClient->getCompany('01569651');
     }
 
-    public function testGetCompanyThrowsRegisterUnavailableExceptionOn503(): void
+    public function testGetCompanyThrowsRateLimitExceededExceptionOn429(): void
     {
         $httpClient = new MockHttpClient([
-            new MockResponse('', ['http_code' => 503]),
+            new MockResponse('', [
+                'http_code' => 429,
+                'response_headers' => ['retry-after' => ['60']],
+            ]),
         ]);
         $apiClient = new ApiClient($httpClient);
 
-        $this->expectException(RegisterUnavailableException::class);
-        $this->expectExceptionMessage('Register service is unavailable.');
-
-        $apiClient->getCompany('01569651');
+        try {
+            $apiClient->getCompany('01569651');
+            $this->fail('Expected RateLimitExceededException to be thrown.');
+        } catch (RateLimitExceededException $e) {
+            $this->assertSame('Rate limit exceeded.', $e->getMessage());
+            $this->assertSame(60, $e->getRetryAfterSeconds());
+        }
     }
 
     public function testGetCompanyThrowsRegisterUnavailableExceptionOnTransportError(): void
