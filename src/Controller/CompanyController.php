@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\CompanyService;
+use App\Provider\CompanyRegister\CompanyRegisterProviderInterface;
 use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class CompanyController extends AbstractController
 {
     public function __construct(
-        private readonly CompanyService $companyService
+        private readonly CompanyRegisterProviderInterface $companyRegisterProvider
     ) {}
 
     #[OA\Get(
@@ -197,6 +197,6 @@ class CompanyController extends AbstractController
     #[Route('/{businessId}/register-data', name: 'register_data', methods: ['GET'])]
     public function registerData(string $businessId): JsonResponse
     {
-        return $this->json($this->companyService->getFromRegister($businessId));
+        return $this->json($this->companyRegisterProvider->getCompany($businessId));
     }
 }
