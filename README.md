@@ -2,6 +2,8 @@
 
 Symfony API for fetching company data from the Czech business register (ARES).
 
+> **Note:** This repository is a technical showcase. It demonstrates architecture, design decisions, and integration with an external register — it is not intended as a fully featured, production-ready application.
+
 ## About
 
 Loads company data from [ARES](https://ares.gov.cz) by Czech business ID (IČO) and returns it as structured, immutable DTOs ready for further use.
